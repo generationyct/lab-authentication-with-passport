@@ -12,6 +12,7 @@ const session      = require('express-session')
 const Mongostore   = require('connect-mongo')(session)
 const flash        = require('connect-flash')
 
+const passport = require('./auth/passport')
 
 
 mongoose
@@ -28,11 +29,23 @@ const debug = require('debug')(`${app_name}:${path.basename(__filename).split('.
 
 const app = express();
 
+app.use(session({
+  secret: process.env.SESSION_SECRET,
+  resave: true,
+  saveUninitialized: true,
+  store: new Mongostore( {
+    mongooseConnection: mongoose.connection
+  })
+}))
+
 // Middleware Setup
 app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
+app.use(flash())
+app.use(passport.initialize())
+app.use(passport.session())
 
 // Express View engine setup
 
