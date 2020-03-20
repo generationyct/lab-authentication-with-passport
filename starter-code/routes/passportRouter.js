@@ -19,6 +19,12 @@ passportRouter.get("/signup", (req, res) => {
   res.render("passport/signup");
 });
 
+passportRouter.get("/login", (req, res, next) => {
+  res.render("passport/login");
+});
+
+
+
 // POST routes
 
 passportRouter.post("/signup", (req, res, next) => {
@@ -33,5 +39,11 @@ passportRouter.post("/signup", (req, res, next) => {
     });
   });
 });
+
+passportRouter.post('/login', passport.authenticate('local', {
+  successRedirect:'/',
+  failureRedirect:'/login',
+  failureFlash: true
+}))
 
 module.exports = passportRouter;
