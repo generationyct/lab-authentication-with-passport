@@ -72,9 +72,14 @@ const index = require('./routes/index');
 app.use('/', index);
 
 const passportRouter = require("./routes/passportRouter");
-app.use('/', passportRouter);
+app.use('/', passportRouter)
 app.use('/signup', passportRouter)
 app.use('/login', passportRouter)
+
+const postRouter = require('./routes/postRouter')
+app.use('/', postRouter)
+app.use('/post', postRouter)
+
 
 
 module.exports = app;
