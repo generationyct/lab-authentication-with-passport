@@ -64,7 +64,7 @@ app.use(favicon(path.join(__dirname, 'public', 'images', 'favicon.ico')));
 
 
 // default value for title local
-app.locals.title = 'Express - Generated with IronGenerator by Markie Markf';
+app.locals.title = 'The Greates Blog Application ever!';
 
 
 // Routes middleware goes here
@@ -79,6 +79,10 @@ app.use('/login', passportRouter)
 const postRouter = require('./routes/postRouter')
 app.use('/', postRouter)
 app.use('/post', postRouter)
+
+const pageRouter = require('./routes/pageRouter')
+app.use('/', pageRouter)
+app.use('/page', pageRouter)
 
 
 

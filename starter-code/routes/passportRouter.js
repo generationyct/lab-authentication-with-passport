@@ -41,7 +41,7 @@ passportRouter.post("/signup", (req, res, next) => {
 });
 
 passportRouter.post('/login', passport.authenticate('local', {
-  successRedirect:'/',
+  successRedirect:'/page',
   failureRedirect:'/login',
   failureFlash: true
 }))
