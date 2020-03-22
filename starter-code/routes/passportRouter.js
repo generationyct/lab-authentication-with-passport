@@ -23,6 +23,13 @@ passportRouter.get("/login", (req, res, next) => {
   res.render("passport/login");
 });
 
+// Logout route
+passportRouter.get('/logout', (req, res, next) => {
+  req.session.destroy(() => {
+    res.redirect('/login')
+  })
+});
+
 
 
 // POST routes
