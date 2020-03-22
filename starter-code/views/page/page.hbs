@@ -1,13 +1,17 @@
-<div>User logged in page</div>
 {{#if user}}
-  <div>
-    <div class="nav">
-      <ul>
-        <li><a href="/">Index</a></li>
-      </ul>
-    </div>
+<div class="container">
+  <div class="nav-bar">
+    <ul>
+      <li><a href="/">Index</a></li>
+      <li><a href="/signup">Sign up</a></li>
+      <li><a href="/login">Login</a></li>
+      <li><a href="/page">MY PAGE</a></li>
+    </ul>
+  </div>
+  <div class="center-content">
     <h1>Hi {{ user.username }}</h1>
     <h1>You are, <span style="color: red;">{{ user.username}}</span>. And you have made it! </h1>
     <img src="http://media.giphy.com/media/UsK5GqD3e0huU/giphy.gif" alt="You rock.">
   </div>
+</div>
 {{/if}}
