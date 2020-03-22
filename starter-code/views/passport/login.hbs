@@ -1,11 +1,23 @@
-<h1>LOGIN TO OUR WEBSITE</h1>
+<div class="container">
+  <div class="nav-bar">
+    <ul>
+      <li><a href="/">Index</a></li>
+      <li><a href="/signup">Sign up</a></li>
+      <li><a href="/login">Login</a></li>
+    </ul>
+  </div>
 
-<form action="/login" method="post">
-  <input type="text" name="username" id="">
-  <input type="text" name="password" id="">
-  <button type="submit">LOGIN</button>
-</form>
+  <div class="center-content">
+    <form action="/login" method="post">
+      <label for="username">Username</label>
+      <input type="text" name="username" id="" placeholder="Please fill in your User name..">
+      <label for="password">Password</label>
+      <input type="text" name="password" id="" placeholder="Please fill in your Password..">
+      <button id="btn-submit" type="submit">Login</button>
+    </form>
+  </div>
+</div>
 
-{{#if message}}
-<div>{{message}}</div>
-{{/if}}
+  {{#if message}}
+  <div>{{message}}</div>
+  {{/if}}
