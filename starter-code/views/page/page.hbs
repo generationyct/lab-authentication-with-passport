@@ -4,15 +4,14 @@
     <ul>
       <li><a href="/">Index</a></li>
       <li><a href="/page">My Page</a></li>
-      <li><a href="/logout">Logout</a></li>
       <li id="user-header">{{ user.username}}, you are logged in! <a href="/logout">Logout</a></li>
       
     </ul>
   </div>
   <div class="center-content">
-    <h1>Hi {{ user.username }}</h1>
-    <h1>You are, <span style="color: red;">{{ user.username}}</span>. And you have made it! </h1>
-    <img src="http://media.giphy.com/media/UsK5GqD3e0huU/giphy.gif" alt="You rock.">
+    <h1>Hi <span style="color: red;">{{ user.username}}</span></h1>
+    <h2>You have made it! </h2>
+    <img src="https://media.giphy.com/media/A7GowSMfBhq6Y/giphy.gif" alt="You rock.">
   </div>
 </div>
 {{/if}}

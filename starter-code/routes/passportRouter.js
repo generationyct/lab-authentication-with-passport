@@ -47,6 +47,21 @@ passportRouter.post("/signup", (req, res, next) => {
   });
 });
 
+
+// passportRouter.post("/signup", (req, res, next) => {
+//   const { username, password } = req.body;
+//   console.log(req.body)
+//   bcrypt.hash(password, 10).then(hash => {
+//     return User.create({
+//       username: username,
+//       password: hash
+//     }).then(user => {
+//       res.send(user);
+//     });
+//   });
+// });
+
+
 passportRouter.post('/login', passport.authenticate('local', {
   successRedirect:'/page',
   failureRedirect:'/login',
